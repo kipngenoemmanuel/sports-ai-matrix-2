@@ -1,1 +1,15 @@
-# sports-ai-matrix-2
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)))
+Flask==3.0.2
+numpy==1.26.4
+scipy==1.12.0
+easyocr==1.7.1
+torch==2.2.1 --index-url https://pytorch.org
+torchvision==0.17.1 --index-url https://pytorch.org
+services:
+  - type: web
+    name: sports-ai-matrix
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    plan: free# sports-ai-matrix-2
